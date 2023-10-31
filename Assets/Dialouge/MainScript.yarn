@@ -1,0 +1,191 @@
+﻿
+title: Init
+position: 197,-344
+---
+<<declare $dialougeState = 0 as number>>
+
+<<declare $player = "" as string>>
+===
+
+
+title: Start
+position: 88,-536
+---
+
+<<if $dialougeState == 0>>
+<<jump Intro>>
+<<elseif $dialougeState == 1>>
+    <<jump Tutorial1>>
+
+<<elseif $dialougeState == 2>>
+    <<jump Tutorial2>>
+
+<<elseif $dialougeState == 3>>
+    <<jump Tutorial3>>
+
+<<elseif $dialougeState == 4>>
+    <<jump Tutorial4>>
+
+<<elseif $dialougeState == 5>>
+    <<jump Tutorial5>>
+<<endif>>
+
+
+===
+title: Intro
+position: -113,-337
+---
+Stranger: Hey, are you {$player} ?
+{$player}: Yes . . .who are you? 
+Stranger: Hi, I’m your financial advisor.
+Financial Advisor: I was looking for you all over town.
+Financial Advisor: I’ve noticed that you seem to be in quite a bit of debt! 
+{$player}: You didn't have to rub it in…
+Financial Advisor: Well…at least you decided to invest in this property! It has the potential to make a lot of profit. 
+Financial Advisor: You just need to learn how to make the most out of the <b>American Enterprise System</b>. 
+{$player}: The American Enterprise System?
+Financial Advisor: It's where a person like you can make your own business decisions. Essentially, you can make money without restrictions!
+Financial Advisor: By the way, how did you get the money to purchase this property?
+{$player}: I took out a <b>loan</b>. 
+Financial Advisor: Oh, so you borrowed money! If that's the case, you’ll have to pay your <b>mortgage</b> every 60 days. 
+{$player}: What if I don’t pay it in time? 
+Financial Advisor: Then you’ll have to pay for late fees – try to avoid this as much as possible. 
+Financial Advisor: So, make sure that you are spending your time and money wisely. You should aim to pay off your mortgage and make profit as well!
+Financial Advisor: Alright, enough chit chat! Follow me to the farmland below. 
+//npc walks to the soil tile
+{$player}: Hey, wait up!
+<<walkSoil NPC>>
+<<set $dialougeState to 1>>
+
+
+===
+
+
+title: Tutorial1
+position: 71,-200
+---
+Financial Advisor: You finally made it! Anyways, you can grow crops on pieces of soil.
+Financial Advisor: Once you're done growing them, you can sell your crops at a shipping truck for some cash.
+Financial Advisor: So, let’s start by growing some crops! Press <b>space</b> to plant your seeds and to water the plants.
+{$player}: <b>Seeds</b>?
+Financial Advisor: Yep!
+{$player}: What seeds?
+Financial Advisor: Check the bottom of your screen! Click on the crop that you wish to plant; you can switch between crops at any time.
+Financial Advisor: If you run out of seeds, or just want more, you'll have to buy more from the gardener shop.
+Financial Advisor: Anyways, after you plant your seeds, press space to water it. If you don’t water your seeds, they will die! 
+{$player}: Is that the only thing I need to worry about?
+Financial Advisor: Oh, right! Watch out for crows that might come by your crops! Walking near them would scare them away, but you can also use the scarecrow utility. 
+{$player}: How do I use <b>utilities</b>?
+Financial Advisor: To the right of your seeds, there should be a slot labeled utilities! Press the red arrow on the slot to choose which one you use. There are two utilities available for you to use. 
+Financial Advisor: To use utilities, press the drop down and choose which one you want. Once ready, press <b>"Z"</b> to place it (Hover over the sprinkler for more info about it)!
+{$player}: What’s the difference between each one?
+Financial Advisor: Well, like I mentioned earlier, the scarecrow can protect your crops from crows. The Sprinkler can automatically water your crops for you! 
+Financial Advisor: Once you're done growing your plant(s), meet me at the <b>shipping truck</b>.
+<<walk SellingTruck>>
+<<set $dialougeState to 2>>
+===
+
+
+title: Tutorial2
+position: 265,-45
+---
+Financial Advisor: Welcome to the <b>shipping truck</b>! This is where you can sell the crops you’ve grown!
+Financial Advisor: The shipping truck sends the crops you produce to the <b>market</b>.
+{$player}: What exactly is the market?
+Financial Advisor: Well, a market is a place where products and services are bought or sold.
+{$player}: Who’s buying and who’s selling, then?
+Financial Advisor: The market is made up of two groups: the <b>producers</b> and the <b>consumers</b>.
+Financial Advisor: Producers create and supply the goods and services. Meanwhile, consumers purchase the products made from the producer.
+{$player}: So does that make me a producer?
+Financial Advisor: Exactly! After you grow your crops, you can sell them using the shipping truck to make money.
+Financial Advisor: The shipping truck sends the products to retailers and customers, who are your consumers.
+Financial Advisor: This market is one part of the United States economic system, also known as the <b>American Enterprise System</b>, which also consists of businesses that compete for customers free of government control.
+{$player}: Wait, <b>competitors</b>? 
+Financial Advisor: Yup, you can hear about how they’re doing by reading the <b>newspaper</b> on the bottom right of your screen. 
+Financial Advisor: Since you are now a business in the American Enterprise system, you’ll be trying to sell more of your products than your competitors’ products to consumers.
+{$player}: How do I know what price I need to sell my crops for?
+Financial Advisor: When setting a price there is always <b>risk</b> and <b>reward</b>.
+Financial Advisor: What if the price is too high and no one buys?
+Financial Advisor: What if the price is too low and you don't make a profit?
+Financial Advisor: That’s where <b>supply and <b>demand</b> comes in handy.
+Financial Advisor: Supply is the amount of product that producers can offer. Demand is how much consumers are willing to pay for said product.
+Financial Advisor: Additionally, you must keep your competitors in mind when choosing a price.
+{$player}: What do you mean by that? 
+Financial Advisor: Ideally, you want a lower price than your competitors so more people will buy your crops.
+Financial Advisor: But make sure the price isn’t too low – you still need to profit!
+Financial Advisor: Remember that you can check on your competitors using the <b>newspaper</b>. It also shows you supply and demand statistics and the weather.
+Financial Advisor: Anyways, since you don’t have many crops yet, it’s probably not a good idea to sell. 
+Financial Advisor: Oh look, the <b>bank</b> finally opened! This gives us the opportunity for another way to make money: 
+Financial Advisor: Follow me to the bank! 
+<<walk Bank>>
+<<set $dialougeState to 3>>
+
+
+
+
+===
+title: Tutorial3
+position: -89,-97
+---
+Financial Advisor: Welcome to the <b>bank</b>!
+Financial Advisor: This is where you can place a <b>deposit</b>, or place money in the care of a bank, to gain a little bit of money each.
+{$player}: How do I gain money from this? 
+Financial Advisor: Well, your money is deposited into a <b>savings account</b>.
+Financial Advisor: A savings account is a bank account that lets you store your money securely, while gaining an additional percentage of money each month.
+{$player}: Additional percentage? 
+Financial Advisor: The additional percentage is called an <b>interest rate</b>. The interest rate is the rate at which your savings account makes money.
+Financial Advisor: You don’t have to do anything, and you’ll make money!
+Financial Advisor: Isn’t that awesome?
+{$player}: Yeah, that sounds pretty sweet. 
+Financial Advisor: However, savings accounts are low-risk low-reward investments, meaning although they are safe and guaranteed…
+Financial Advisor: …they don’t make money very fast. You shouldn’t only rely on them to make you money.
+{$player}: Is there any other way I can make money through investing? 
+Financial Advisor: Another option you have with the bank is the <b>Certificate of Deposit</b> (CDs)!
+Financial Advisor: They are very similar to savings accounts, since they are very safe but only generate a little bit of cash over time.
+{$player}: So what’s the difference?
+Financial Advisor: Certificates of Deposits hold a fixed amount of money for a fixed period of time (1, 3, 5, or 8 months). So unlike a savings account, you have to leave the money alone. 
+Financial Advisor: If you need to withdraw money before the set time is up, the bank charges a penalty.
+Financial Advisor: Shorter CD lifespans have <b>lower interest rates</b> while longer CD lifespans have <b>higher interest rates</b>. But either way, they still have higher rates than a savings account!
+{$player}: When should I use certificates of deposits? 
+Financial Advisor: It’s best for when you have extra money at hand that you probably won’t need quickly. 
+{$player}: I see. Anything else? 
+Financial Advisor: Lastly, you can invest in <b>stocks</b>. They are shares of a company that you can buy and own.
+Financial Advisor: Your money is directly connected to the company's success.
+Financial Advisor: If they do bad, so do your stocks. Therefore, you’ve lost money!
+Financial Advisor: But if they do good, then so do your stocks, and yay! You’ve earned money! Simple, right?
+{$player}: How do I know if a stock will do good or bad? 
+Financial Advisor: You can see how much percent increase or decrease in price that the stock has over a period of time.
+Financial Advisor: Depending on how the stocks are doing, it can affect how you should buy them too!
+{$player}: Where do I see this information?
+Financial Advisor: In your home, you should have a <b>computer</b>! Find the stock application when you use it; the statistics and the option to buy or sell stocks will be there. 
+Financial Advisor: Stocks go up and down, up and down, so <b>don’t buy when stocks are up</b>! They are very likely to go back down and cause you to lose tons of money.
+Financial Advisor: On the flipside, when stocks are at a <b>low point</b>, it’s a <b>good idea to invest</b>! You never know, they might shoot upwards, awarding you lots and lots of sweet cash!
+{$player}: Is that all I need to know for stocks?
+Financial Advisor: Well, this is just a rule of thumb. There are many other factors that drive stocks, so be careful when making your decisions!
+Financial Advisor: Just remember: stocks are a <b>high-risk high-reward<b> investment. Only invest what you're willing to lose – prices can change unpredictably and you could lose all of your money.
+Financial Advisor: And now you know how stocks work!
+Financial Advisor: Before I send you off, I need to tell you one last thing
+Financial Advisor: Meet me at the <b>farm</b>.
+
+
+<<walkSoil NPC>>
+<<set $dialougeState to 4 >>
+
+
+===
+
+
+title: Tutorial4
+position: -367,-19
+---
+{$player}: You said you need to tell me something?
+Financial Advisor: Your goal is to make enough profit from selling crops and investments to pay off your loan.
+Financial Advisor: Whenever you produce a crop and sell it, be aware of the <b>costs of producing</b> the crop.
+Financial Advisor: If it costs more money to make the crop and pay for shipping than the actual price of the crop, you’re losing money!
+Financial Advisor: Oh, look at the time! I have to go. Keep working hard, I believe in you.
+{$player}: Wait, you're just going to leave?
+Financial Advisor: I might visit you again in the future. But for now, good luck and remember my advice!
+Ally: Bye!
+<<Despawn NPC>>
+<<set $dialougeState to 5>>
+===
